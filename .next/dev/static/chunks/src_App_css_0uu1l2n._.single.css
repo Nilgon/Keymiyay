@@ -1,0 +1,202 @@
+/* [project]/src/App.css [client] (css) */
+:root {
+  --green: #07963e;
+  --green-dark: #008638;
+  --text: #191919;
+  --muted: #6c7074;
+  --line: #e8e8e8;
+  --soft: #f8f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text);
+  background: #f3f3f3;
+  margin: 0;
+  font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+}
+
+.page-shell {
+  background: #f3f3f3;
+  width: 1256px;
+  min-height: 1536px;
+  margin: 0 auto;
+  padding: 14px 16px;
+}
+
+.frame {
+  background: #fff;
+  border-radius: 14px;
+  min-height: 1508px;
+  padding: 26px 28px 32px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px #00000012;
+}
+
+button {
+  cursor: pointer;
+  transition: transform .16s, box-shadow .16s, color .16s, background .16s, border-color .16s, opacity .16s, filter .16s;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #fff;
+  }
+
+  .page-shell {
+    background: #fff;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .frame {
+    min-height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 20px 18px 126px;
+  }
+}
+
+.page-shell.theme-dark {
+  --text: #edf7f0;
+  --muted: #aab8af;
+  --line: #ffffff1c;
+  --soft: #101a14;
+  color: #edf7f0;
+  background: #090f0c;
+}
+
+.page-shell.theme-dark .frame, .page-shell.theme-dark .panel, .page-shell.theme-dark .profile, .page-shell.theme-dark .info-card, .page-shell.theme-dark .tabs, .page-shell.theme-dark .gift-item, .page-shell.theme-dark .review-row, .page-shell.theme-dark .mobile-profile-card, .page-shell.theme-dark .mobile-profile-menu, .page-shell.theme-dark .mobile-profile-item, .page-shell.theme-dark .dashboard-action-card, .page-shell.theme-dark .active-gift-card, .page-shell.theme-dark .history-item, .page-shell.theme-dark .invite-card, .page-shell.theme-dark .stat-item, .page-shell.theme-dark .faq-hero-copy, .page-shell.theme-dark .faq-hero-card, .page-shell.theme-dark .faq-section, .page-shell.theme-dark .faq-step-card, .page-shell.theme-dark .faq-business-flow li, .page-shell.theme-dark .faq-trust-card, .page-shell.theme-dark .faq-item, .page-shell.theme-dark .faq-field input, .page-shell.theme-dark .faq-field textarea, .page-shell.theme-dark .faq-field select, .page-shell.theme-dark .faq-secondary-btn {
+  color: #edf7f0;
+  background: #0f1712;
+  border-color: #ffffff1c;
+  box-shadow: 0 18px 40px #00000047;
+}
+
+.page-shell.theme-dark .brand, .page-shell.theme-dark .brand-icon, .page-shell.theme-dark .nav-list, .page-shell.theme-dark .profile-title, .page-shell.theme-dark .info-text, .page-shell.theme-dark .section-title, .page-shell.theme-dark .gift-copy h3, .page-shell.theme-dark .review-name, .page-shell.theme-dark .dashboard-user-copy h1, .page-shell.theme-dark .dashboard-action-card, .page-shell.theme-dark .active-gift-card h3, .page-shell.theme-dark .history-item strong, .page-shell.theme-dark .stat-item strong, .page-shell.theme-dark .faq-hero h1, .page-shell.theme-dark .faq-section-head h2, .page-shell.theme-dark .faq-form-intro h2, .page-shell.theme-dark .faq-step-card h3, .page-shell.theme-dark .faq-business-flow li, .page-shell.theme-dark .faq-trust-card li, .page-shell.theme-dark .faq-item summary, .page-shell.theme-dark .faq-form-progress span, .page-shell.theme-dark .faq-form-title, .page-shell.theme-dark .faq-field span {
+  color: #edf7f0;
+}
+
+.page-shell.theme-dark .meta, .page-shell.theme-dark .about-text, .page-shell.theme-dark .review-text, .page-shell.theme-dark .gift-copy p, .page-shell.theme-dark .dashboard-user-copy p, .page-shell.theme-dark .active-gift-card p, .page-shell.theme-dark .history-item span, .page-shell.theme-dark .invite-card p, .page-shell.theme-dark .faq-hero p, .page-shell.theme-dark .faq-form-intro p, .page-shell.theme-dark .faq-step-card p, .page-shell.theme-dark .faq-item p, .page-shell.theme-dark .faq-hero-card span {
+  color: #aab8af;
+}
+
+.page-shell.theme-dark .tabs li, .page-shell.theme-dark .panel-head-row a, .page-shell.theme-dark .all-gifts, .page-shell.theme-dark .mobile-profile-item {
+  color: #edf7f0;
+}
+
+.page-shell.theme-dark .tabs li.active, .page-shell.theme-dark .nav-list .active-link, .page-shell.theme-dark .panel-head-row a:hover, .page-shell.theme-dark .all-gifts:hover {
+  color: var(--green);
+}
+
+.page-shell.theme-dark .logo-circle, .page-shell.theme-dark .faq-hero-card svg, .page-shell.theme-dark .faq-business-flow li:before {
+  background: #07963e29;
+}
+
+.page-shell.theme-dark .user-dropdown {
+  background: #0f1712;
+  border-color: #ffffff1c;
+  box-shadow: 0 18px 36px #0006;
+}
+
+.page-shell.theme-dark .user-dropdown button {
+  color: #edf7f0;
+  background: none;
+}
+
+.page-shell.theme-dark .user-dropdown button:hover, .page-shell.theme-dark .mobile-profile-item:hover, .page-shell.theme-dark .faq-secondary-btn:hover {
+  color: #4ade80;
+  background: #07963e24;
+}
+
+.page-shell.theme-dark .mobile-bottom-nav {
+  background: #0f1712f5;
+  border-color: #ffffff1c;
+  box-shadow: 0 -18px 36px #00000057;
+}
+
+.page-shell.theme-dark .mobile-bottom-nav button {
+  color: #d8e8de;
+}
+
+.page-shell.theme-dark .mobile-bottom-nav button:hover {
+  color: var(--green);
+}
+
+.page-shell.theme-dark .faq-form-progress div {
+  background: #ffffff1f;
+}
+
+.page-shell.theme-dark .faq-status-success {
+  color: #7bed9f;
+  background: #07963e24;
+  border-color: #07963e59;
+}
+
+.page-shell.theme-dark .faq-status-error {
+  color: #ff9b9b;
+  background: #b41e1e29;
+  border-color: #b41e1e52;
+}
+
+@media (max-width: 768px) {
+  body:has(.page-shell.theme-dark) {
+    background: #090f0c;
+  }
+
+  .page-shell.theme-dark {
+    background: #090f0c;
+  }
+}
+
+html.theme-dark body {
+  color: #edf7f0;
+  background: #090f0c;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) {
+  --text: #edf7f0;
+  --muted: #aab8af;
+  --line: #ffffff1c;
+  --soft: #101a14;
+  color: #edf7f0;
+  background: #090f0c;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .frame, html.theme-dark .page-shell:not(.theme-dark) .panel, html.theme-dark .page-shell:not(.theme-dark) .profile, html.theme-dark .page-shell:not(.theme-dark) .info-card, html.theme-dark .page-shell:not(.theme-dark) .tabs, html.theme-dark .page-shell:not(.theme-dark) .gift-item, html.theme-dark .page-shell:not(.theme-dark) .review-row, html.theme-dark .page-shell:not(.theme-dark) .home-frame, html.theme-dark .page-shell:not(.theme-dark) .home-search-field, html.theme-dark .page-shell:not(.theme-dark) .home-profile-card, html.theme-dark .page-shell:not(.theme-dark) .home-section, html.theme-dark .page-shell:not(.theme-dark) .home-footer, html.theme-dark .page-shell:not(.theme-dark) .home-brand-card, html.theme-dark .page-shell:not(.theme-dark) .home-category-card, html.theme-dark .page-shell:not(.theme-dark) .home-offer-card, html.theme-dark .page-shell:not(.theme-dark) .home-banner-slide {
+  color: #edf7f0;
+  background: #0f1712;
+  border-color: #ffffff1c;
+  box-shadow: 0 18px 40px #00000047;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .brand, html.theme-dark .page-shell:not(.theme-dark) .brand-icon, html.theme-dark .page-shell:not(.theme-dark) .nav-list, html.theme-dark .page-shell:not(.theme-dark) .home-story, html.theme-dark .page-shell:not(.theme-dark) .home-section-head h2, html.theme-dark .page-shell:not(.theme-dark) .home-profile-card h1, html.theme-dark .page-shell:not(.theme-dark) .profile-title, html.theme-dark .page-shell:not(.theme-dark) .section-title, html.theme-dark .page-shell:not(.theme-dark) .gift-copy h3, html.theme-dark .page-shell:not(.theme-dark) .review-name {
+  color: #edf7f0;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .home-theme-toggle {
+  background: linear-gradient(135deg, #0f172a 0%, #07351e 100%);
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .home-theme-toggle:before {
+  opacity: 1;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .home-theme-toggle-thumb {
+  background: #d9ffe7;
+  transform: translateX(-36px);
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .home-theme-toggle-sun {
+  color: #ffffff6b;
+}
+
+html.theme-dark .page-shell:not(.theme-dark) .home-theme-toggle-moon {
+  color: #b8ffd0;
+}
+
+/*# sourceMappingURL=src_App_css_0uu1l2n._.single.css.map*/

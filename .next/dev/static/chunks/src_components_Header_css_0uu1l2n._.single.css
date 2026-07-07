@@ -1,0 +1,412 @@
+/* [project]/src/components/Header.css [client] (css) */
+.topbar {
+  height: 52px;
+  margin-bottom: 30px;
+}
+
+.brand {
+  color: var(--green);
+  letter-spacing: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  gap: 9px;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.brand span {
+  white-space: nowrap;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--green);
+  stroke-width: 3.4px;
+}
+
+.nav-list {
+  color: #171717;
+  flex-wrap: nowrap;
+  gap: 34px;
+  margin: 0 42px 0 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.nav-list li {
+  white-space: nowrap;
+}
+
+.login-btn, .follow-btn {
+  color: #fff;
+  background: linear-gradient(#0ba746 0%, #008b38 100%);
+  border: 0;
+  font-weight: 800;
+  box-shadow: 0 5px 10px #007e343b;
+}
+
+.login-btn {
+  white-space: nowrap;
+  border-radius: 9px;
+  flex-shrink: 0;
+  width: 135px;
+  height: 50px;
+  font-size: 17px;
+}
+
+.user-menu-wrap {
+  position: relative;
+}
+
+.user-menu-btn {
+  color: #fff;
+  background: linear-gradient(#0ba746 0%, #008b38 100%);
+  border: 0;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-width: 186px;
+  height: 50px;
+  padding: 0 12px 0 14px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  box-shadow: 0 5px 10px #007e343b;
+}
+
+.user-mini-avatar {
+  background: #fff3;
+  border-radius: 50%;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  font-size: 15px;
+  display: grid;
+}
+
+.user-menu-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .18s;
+}
+
+.user-menu-btn.is-open svg {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  z-index: 40;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  width: 220px;
+  padding: 8px;
+  animation: .17s both dropdownIn;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  box-shadow: 0 18px 36px #00000021;
+}
+
+.user-dropdown button {
+  color: #202020;
+  text-align: right;
+  background: #fff;
+  border: 0;
+  border-radius: 9px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+}
+
+.user-dropdown button:hover {
+  color: var(--green);
+  background: #f4fbf7;
+  transform: translateX(-2px);
+}
+
+.user-dropdown svg {
+  width: 19px;
+  height: 19px;
+}
+
+.login-error {
+  color: #c91f1f;
+  min-height: 24px;
+  margin: -2px 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .topbar > div:first-child {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 30px;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-list {
+    display: none !important;
+  }
+
+  .login-btn, .user-menu-btn {
+    width: 132px;
+    min-width: auto;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .user-dropdown {
+    width: 210px;
+    left: 0;
+  }
+
+  .dashboard-frame .topbar {
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.nav-list a, .nav-list button, .home-footer-links a, .home-footer-links button, .mobile-profile-card button, .panel-head-row a, .all-gifts {
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  align-items: center;
+  padding: 0 0 8px;
+  text-decoration: none;
+  transition: color .18s, transform .18s;
+  display: inline-flex;
+  position: relative;
+}
+
+.nav-list a:after, .nav-list button:after, .home-footer-links a:after, .home-footer-links button:after, .mobile-profile-card button:after, .panel-head-row a:after, .all-gifts:after {
+  content: "";
+  background: var(--green);
+  transform-origin: 100%;
+  border-radius: 999px;
+  width: 100%;
+  height: 3px;
+  transition: transform .2s;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.nav-list a:hover, .nav-list button:hover, .home-footer-links a:hover, .home-footer-links button:hover, .mobile-profile-card button:hover, .panel-head-row a:hover, .all-gifts:hover {
+  color: var(--green);
+  transform: translateY(-1px);
+}
+
+.nav-list a:hover:after, .nav-list button:hover:after, .home-footer-links a:hover:after, .home-footer-links button:hover:after, .mobile-profile-card button:hover:after, .panel-head-row a:hover:after, .all-gifts:hover:after {
+  transform: scaleX(1);
+}
+
+.nav-list button {
+  padding-top: 0;
+}
+
+.brand:hover {
+  color: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.nav-list li {
+  cursor: default;
+  padding-bottom: 8px;
+  transition: color .18s, transform .18s;
+  position: relative;
+}
+
+.nav-list li:after {
+  content: "";
+  background: var(--green);
+  transform-origin: 100%;
+  border-radius: 999px;
+  width: 100%;
+  height: 3px;
+  transition: transform .2s;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.nav-list li:hover {
+  color: var(--green);
+  transform: translateY(-1px);
+}
+
+.nav-list li:hover:after {
+  transform: scaleX(1);
+}
+
+.nav-list li a:after, .nav-list li button:after {
+  content: none;
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+  .topbar {
+    gap: 16px;
+  }
+
+  .topbar > div:first-child {
+    flex: auto;
+    min-width: 0;
+  }
+
+  .topbar nav {
+    min-width: 0;
+  }
+
+  .brand {
+    font-size: 30px;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-list {
+    gap: clamp(12px, 1.7vw, 22px);
+    margin-right: clamp(12px, 2vw, 24px);
+    font-size: clamp(13px, 1.25vw, 15px);
+  }
+
+  .login-btn, .user-menu-btn {
+    width: auto;
+    min-width: 92px;
+    max-width: 128px;
+    height: 44px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 769px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 26px;
+  }
+
+  .brand-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-list {
+    gap: 10px;
+    margin-right: 10px;
+    font-size: 12.5px;
+  }
+
+  .login-btn, .user-menu-btn {
+    min-width: 76px;
+    max-width: 106px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .topbar {
+    gap: 14px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  .topbar > div:first-child {
+    flex: auto;
+    min-width: 0;
+  }
+
+  .nav-list {
+    display: none !important;
+  }
+
+  .login-btn, .user-menu-btn {
+    width: auto;
+    min-width: 132px;
+    max-width: 160px;
+    height: 46px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 26px;
+  }
+
+  .brand-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .login-btn, .user-menu-btn {
+    min-width: 112px;
+    height: 42px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .faq-header-action {
+    min-width: 190px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    align-items: flex-start !important;
+  }
+
+  .home-header-actions {
+    flex-wrap: nowrap;
+  }
+
+  .faq-header-action {
+    white-space: normal;
+    width: auto;
+    min-width: 0;
+    max-width: 190px;
+    line-height: 1.6;
+  }
+}
+
+/*# sourceMappingURL=src_components_Header_css_0uu1l2n._.single.css.map*/
