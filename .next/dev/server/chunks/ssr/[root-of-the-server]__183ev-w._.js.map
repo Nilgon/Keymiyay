@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/KHOOBTEK/Desktop/projects/keymiyay%20next%20main/keymiyay%20next%20main/pages/_document.jsx"],"sourcesContent":["import { Head, Html, Main, NextScript } from 'next/document';\n\nconst themeScript = \"(function(){try{var theme=window.localStorage.getItem('keymiyay-theme');if(theme==='dark'){document.documentElement.classList.add('theme-dark');}}catch(e){}})();\";\n\nexport default function Document() {\n  return (\n    <Html suppressHydrationWarning data-scroll-behavior=\"smooth\">\n      <Head>\n        <script dangerouslySetInnerHTML={{ __html: themeScript }} />\n      </Head>\n      <body>\n        <Main />\n        <NextScript />\n      </body>\n    </Html>\n  );\n}\n"],"names":["themeScript","Document","suppressHydrationWarning","dangerouslySetInnerHTML","__html"],"mappings":";;;;;AAAA;;;AAEA,MAAMA,cAAc;AAEL,SAASC;IACtB,qBACE,qKAAC,iIAAI;QAACC,wBAAwB;QAAC,wBAAqB;;0BAClD,qKAAC,iIAAI;0BACH,cAAA,qKAAC;oBAAOC,yBAAyB;wBAAEC,QAAQJ;oBAAY;;;;;;;;;;;0BAEzD,qKAAC;;kCACC,qKAAC,iIAAI;;;;;kCACL,qKAAC,uIAAU;;;;;;;;;;;;;;;;;AAInB"}}]
-}

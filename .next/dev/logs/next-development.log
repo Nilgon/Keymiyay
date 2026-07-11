@@ -1,6 +1,0 @@
-{"timestamp":"00:00:04.229","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 306ms. If C:\\Users\\KHOOBTEK\\Desktop\\projects\\keymiyay next main\\keymiyay next main\\.next/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:00:09.030","source":"Server","level":"WARN","message":"⚠ The \"middleware\" file convention is deprecated. Please use \"proxy\" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy"}
-{"timestamp":"00:00:09.665","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:01:35.033","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"00:02:14.206","source":"Server","level":"LOG","message":"✓ Finished writing to filesystem cache in 18.3s"}
-{"timestamp":"00:06:10.371","source":"Server","level":"LOG","message":"○ Compiling /restaurant ..."}
