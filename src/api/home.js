@@ -1,4 +1,5 @@
-﻿import httpClient from "../helper/httpClient";
+import httpClient from "../helper/httpClient";
+import { toFormData } from "../helper/formData";
 
 export const getHomePageData = async () => {
   const response = await httpClient.get("/home", {
@@ -8,18 +9,35 @@ export const getHomePageData = async () => {
   return response.data;
 };
 
-export const requestDiscountCode = async (offer) => {
-  const response = await httpClient.post(
-    "/discount/request",
-    {
-      discount_id: offer?.id || offer?.discount_id || offer?.discountId,
-      offer_id: offer?.offer_id || offer?.offerId || offer?.id,
-      title: offer?.title,
-    },
-    {
-      requiresAuth: true,
-    }
-  );
+export const getDiscountCards = async () => {
+  const response = await httpClient.get("/discount/all", {
+    requiresAuth: false,
+  });
+
+  return response.data;
+};
+
+const buildDiscountPayload = (offer, context = {}) => {
+  const collectionId = offer?.collection_id || offer?.collectionId || offer?.id || "";
+  const discountId = offer?.discount_id || offer?.discountId || offer?.offer_id || offer?.offerId || offer?.id || "";
+  const token = offer?.token || offer?.discount_token || offer?.discountToken || "";
+
+  return {
+    mobile: context.mobile || offer?.mobile || "",
+    collection_id: collectionId,
+    collectionId,
+    discount_id: discountId,
+    discountId,
+    token,
+    discount_token: token,
+  };
+};
+
+export const requestDiscountCode = async (offer, context = {}) => {
+  const payload = toFormData(buildDiscountPayload(offer, context));
+  const response = await httpClient.post("/discount/generate", payload, {
+    requiresAuth: true,
+  });
 
   return response.data;
 };
