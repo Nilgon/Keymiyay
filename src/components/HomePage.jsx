@@ -26,6 +26,7 @@ import { sendOtp, verifyOtp } from '../api/auth';
 import { getDiscountCards, getHomePageData, requestDiscountCode } from '../api/home';
 import { getTokenFromAuthResponse, getUserTypeFromAuthResponse, hasAuthToken, setAuthToken } from '../helper/authCookie';
 import { brandAssets } from '../data/brandAssets';
+import InstallAppButton from '../components/InstallAppButton';
 
 const t = {
   brand: "\u06a9\u06cc \u0645\u06cc\u0627\u06cc",
@@ -702,6 +703,7 @@ const mergeOfferLists = (fallbackOffers, apiOffers) => {
 
 const mergeHomeAndDiscountData = (homePayload, discountPayload) => {
   const normalizedHome = normalizeHomeData(homePayload);
+  const normalizedDiscount = normalizeHomeData(discountPayload);
   const discountOffers = normalizeDiscountApiOffers(discountPayload);
   const discountStories = normalizeApiStories(discountPayload);
   const homeStories = normalizeApiStories(resolveHomeData(homePayload));
@@ -709,6 +711,7 @@ const mergeHomeAndDiscountData = (homePayload, discountPayload) => {
 
   return {
     ...normalizedHome,
+    banners: normalizedDiscount.banners.length ? normalizedDiscount.banners:normalizedHome.banners,
     stories: discountStories.length ? discountStories : homeStories.length ? homeStories : offerStories,
     brands: discountOffers.length ? buildBrandsFromOffers(discountOffers) : normalizedHome.brands,
     offers: mergeOfferLists(normalizedHome.offers, discountOffers),
@@ -1949,7 +1952,7 @@ useEffect(() => {
               <ul className="nav-list d-flex align-items-center">
                 <li><Link href="/">{t.home}</Link></li>
                 <li><button type="button" onClick={() => document.getElementById('gifts')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}>{t.gifts}</button></li>
-                <li><a href="#brands">{t.businesses}</a></li>
+                
                 <li><a href="#brands">{t.shop}</a></li>
                 <li><Link href="/faq">{t.faq}</Link></li>
                 <li><button type="button" onClick={openAccount}>{t.club}</button></li>
@@ -1957,20 +1960,40 @@ useEffect(() => {
               </ul>
             </nav>
           </div>
-          <div className="home-header-actions">
-            <button
-              className={`home-theme-toggle ${isDarkMode ? 'is-dark' : ''}`}
-              type="button"
-              onClick={onToggleTheme}
-              aria-label={isDarkMode ? t.lightMode : t.darkMode}
-              title={isDarkMode ? t.lightMode : t.darkMode}
-            >
-              <span className="home-theme-toggle-icon home-theme-toggle-sun"><Sun /></span>
-              <span className="home-theme-toggle-thumb" />
-              <span className="home-theme-toggle-icon home-theme-toggle-moon"><Moon /></span>
-            </button>
-            <button className="login-btn home-login-btn" type="button" onClick={openAccount}>{isLoggedIn ? '\u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc' : t.login}</button>
-          </div>
+  <div className="home-header-actions">
+
+  <button
+    className={`home-theme-toggle ${isDarkMode ? 'is-dark' : ''}`}
+    type="button"
+    onClick={onToggleTheme}
+    aria-label={isDarkMode ? t.lightMode : t.darkMode}
+    title={isDarkMode ? t.lightMode : t.darkMode}
+  >
+    <span className="home-theme-toggle-icon home-theme-toggle-sun">
+      <Sun />
+    </span>
+
+    <span className="home-theme-toggle-thumb" />
+
+    <span className="home-theme-toggle-icon home-theme-toggle-moon">
+      <Moon />
+    </span>
+  </button>
+
+  {/* دکمه نصب اپ */}
+  <div className="home-install-app-wrapper">
+    <InstallAppButton />
+  </div>
+
+  <button
+    className="login-btn home-login-btn"
+    type="button"
+    onClick={openAccount}
+  >
+    {isLoggedIn ? 'حساب کاربری' : t.login}
+  </button>
+
+</div>
         </header>
 
         <section className="home-search-row">
